@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import by.grsu.musik.schedule.db.dao.IDao;
+import by.grsu.musik.schedule.db.model.Country;
 import by.grsu.musik.schedule.db.model.Route;
 
 public class RouteDaoTest extends AbstractTest {
@@ -14,8 +15,7 @@ public class RouteDaoTest extends AbstractTest {
 		Route entity = new Route();
 		entity.setName("Дубко-Автовакзал");
 		entity.setCountStops(10);
-		entity.setDuration("40мин");
-		;
+		entity.setDuration(40);
 		dao.insert(entity);
 		Assertions.assertNotNull(entity.getId());
 	}
@@ -25,8 +25,8 @@ public class RouteDaoTest extends AbstractTest {
 		Route entity = new Route();
 		entity.setName("Дубко-Автовакзал");
 		entity.setCountStops(10);
-		entity.setDuration("40мин");
-		;
+		entity.setDuration(40);
+		
 		dao.insert(entity);
 
 		String newName = "Вишнявец-Дубко";
@@ -44,8 +44,8 @@ public class RouteDaoTest extends AbstractTest {
 		Route entity = new Route();
 		entity.setName("Дубко-Автовакзал");
 		entity.setCountStops(10);
-		entity.setDuration("40мин");
-		;
+		entity.setDuration(40);
+		
 		dao.insert(entity);
 
 		dao.delete(entity.getId());
@@ -58,7 +58,7 @@ public class RouteDaoTest extends AbstractTest {
 		Route entity = new Route();
 		entity.setName("Дубко-Автовакзал");
 		entity.setCountStops(10);
-		entity.setDuration("40мин");
+		entity.setDuration(40);
 		;
 		dao.insert(entity);
 
@@ -76,7 +76,7 @@ public class RouteDaoTest extends AbstractTest {
 			Route entity = new Route();
 			entity.setName("Дубко-Автовакзал");
 			entity.setCountStops(10);
-			entity.setDuration("40мин");
+			entity.setDuration(40);
 			;
 			dao.insert(entity);
 		}

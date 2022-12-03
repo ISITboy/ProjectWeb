@@ -26,10 +26,11 @@ public class CityDaoImpl extends AbstractDao implements IDao<Integer, City> {
 	public void insert(City entity) {
 		try (Connection c = createConnection()) {
 			PreparedStatement pstmt = c
-					.prepareStatement("insert into city(name, countryId, countStreets) values(?,?,?)");
+					.prepareStatement("insert into city(name, countryId, countStreets,dataSave) values(?,?,?,?)");
 			pstmt.setString(1, entity.getName());
 			pstmt.setInt(2, entity.getCountryId());
 			pstmt.setInt(3, entity.getCountStreets());
+			pstmt.setTimestamp(4, entity.getDataSave());
 			pstmt.executeUpdate();
 			entity.setId(getGeneratedId(c, "city"));
 		} catch (SQLException e) {
@@ -103,6 +104,8 @@ public class CityDaoImpl extends AbstractDao implements IDao<Integer, City> {
 		entity.setName(rs.getString("name"));
 		entity.setCountryId(rs.getInt("countryId"));
 		entity.setCountStreets(rs.getInt("countStreets"));
+		entity.setDataSave(rs.getTimestamp("dataSave"));
+		
 		return entity;
 	}
 

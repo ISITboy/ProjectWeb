@@ -28,7 +28,7 @@ public class TransportDaoImpl extends AbstractDao implements IDao<Integer, Trans
 			// owner_id has type Integer, but if it can be null we have to use setObject()
 			// instead of setInt()
 			pstmt.setObject(3, entity.getRoutId());
-			pstmt.setDate(4, entity.getYearRelease());
+			pstmt.setTimestamp(4, entity.getYearRelease());
 			pstmt.setInt(5, entity.getInspection());
 			pstmt.setInt(6, entity.getNumber());
 			pstmt.executeUpdate();
@@ -45,7 +45,7 @@ public class TransportDaoImpl extends AbstractDao implements IDao<Integer, Trans
 			PreparedStatement pstmt = c
 					.prepareStatement("update transport set cityId=?,yearRelease =?,  inspection=? where id=?");
 			pstmt.setInt(1, entity.getCityId());
-			pstmt.setDate(2, entity.getYearRelease());
+			pstmt.setTimestamp(2, entity.getYearRelease());
 			pstmt.setInt(3, entity.getInspection());
 			pstmt.setInt(4, entity.getId());
 			pstmt.executeUpdate();
@@ -109,7 +109,7 @@ public class TransportDaoImpl extends AbstractDao implements IDao<Integer, Trans
 		// getObject() is unsupported by current JDBC driver. We will get "0" if field
 		// is NULL in DB
 		entity.setRoutId(rs.getInt("routId"));
-		entity.setYearRelease(rs.getDate("yearRelease"));
+		entity.setYearRelease(rs.getTimestamp("yearRelease"));
 		entity.setInspection(rs.getInt("inspection"));
 		return entity;
 	}

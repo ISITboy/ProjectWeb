@@ -17,6 +17,8 @@ public class CityDaoTest extends AbstractTest {
 		entity.setName("Брест");
 		entity.setCountryId(saveCountry("Belarus").getId());
 		entity.setCountStreets(40);
+		entity.setDataSave(getCurrentTime());
+		
 		dao.insert(entity);
 		Assertions.assertNotNull(entity.getId());
 	}
@@ -27,6 +29,8 @@ public class CityDaoTest extends AbstractTest {
 		entity.setName("Brest");
 		entity.setCountryId(saveCountry("Belarus").getId());
 		entity.setCountStreets(40);
+		entity.setDataSave(getCurrentTime());
+
 		dao.insert(entity);
 
 		String newName = "Grodno";
@@ -46,6 +50,8 @@ public class CityDaoTest extends AbstractTest {
 		entity.setName("Брест");
 		entity.setCountryId(saveCountry("Belarus").getId());
 		entity.setCountStreets(40);
+		entity.setDataSave(getCurrentTime());
+
 		dao.insert(entity);
 
 		dao.delete(entity.getId());
@@ -59,6 +65,8 @@ public class CityDaoTest extends AbstractTest {
 		entity.setName("Брест");
 		entity.setCountryId(saveCountry("Belarus").getId());
 		entity.setCountStreets(40);
+		entity.setDataSave(getCurrentTime());
+
 		dao.insert(entity);
 
 		City selectedEntity = dao.getById(entity.getId());
@@ -76,6 +84,8 @@ public class CityDaoTest extends AbstractTest {
 			entity.setName("Брест");
 			entity.setCountryId(saveCountry("Belarus").getId());
 			entity.setCountStreets(40);
+			entity.setDataSave(getCurrentTime());
+
 			dao.insert(entity);
 		}
 
@@ -86,7 +96,7 @@ public class CityDaoTest extends AbstractTest {
 		Country entity = new Country();
 		entity.setName(name);
 		entity.setCountCity(10);
-		entity.setDataSave(getDateFromString("10/10/2022"));
+		entity.setDataSave(getCurrentTime());
 		countryDao.insert(entity);
 		return entity;
 	}

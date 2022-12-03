@@ -15,7 +15,7 @@ public class CountryDaoTest extends AbstractTest {
 		entity.setName("Belarus");
 		entity.setCountCity(100);
 		;
-		entity.setDataSave(getDateFromString("10/10/2022"));
+		entity.setDataSave(getCurrentTime());
 		;
 		dao.insert(entity);
 		Assertions.assertNotNull(entity.getId());
@@ -27,7 +27,7 @@ public class CountryDaoTest extends AbstractTest {
 		entity.setName("Belarus");
 		entity.setCountCity(100);
 		;
-		entity.setDataSave(getDateFromString("10/10/2022"));
+		entity.setDataSave(getCurrentTime());
 		;
 		dao.insert(entity);
 
@@ -48,7 +48,7 @@ public class CountryDaoTest extends AbstractTest {
 		entity.setName("Belarus");
 		entity.setCountCity(100);
 		;
-		entity.setDataSave(getDateFromString("10/10/2022"));
+		entity.setDataSave(getCurrentTime());
 		;
 		dao.insert(entity);
 
@@ -63,7 +63,7 @@ public class CountryDaoTest extends AbstractTest {
 		entity.setName("Belarus");
 		entity.setCountCity(100);
 		;
-		entity.setDataSave(getDateFromString("10/10/2022"));
+		entity.setDataSave(getCurrentTime());
 		;
 		dao.insert(entity);
 
@@ -82,7 +82,7 @@ public class CountryDaoTest extends AbstractTest {
 			entity.setName("Belarus");
 			entity.setCountCity(100);
 			;
-			entity.setDataSave(getDateFromString("10/10/2022"));
+			entity.setDataSave(getCurrentTime());
 			;
 			dao.insert(entity);
 		}

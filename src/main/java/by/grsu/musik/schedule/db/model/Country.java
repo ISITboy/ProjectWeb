@@ -1,13 +1,14 @@
 package by.grsu.musik.schedule.db.model;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 
 public class Country {
 
 	private int id;
 	private String name;
 	private int countCity;
-	private Date dataSave;
+	private Timestamp dataSave;
 
 	@Override
 	public String toString() {
@@ -38,12 +39,14 @@ public class Country {
 		this.countCity = countCity;
 	}
 
-	public Date getDataSave() {////
+	public Timestamp getDataSave() {
 		return dataSave;
 	}
 
-	public void setDataSave(java.util.Date date) {
-		this.dataSave = (Date) date;
+	public void setDataSave(Timestamp dataSave) {
+		this.dataSave = dataSave;
 	}
+
+	
 
 }

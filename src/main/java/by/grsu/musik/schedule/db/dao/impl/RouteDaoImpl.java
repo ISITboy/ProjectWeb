@@ -28,7 +28,7 @@ public class RouteDaoImpl extends AbstractDao implements IDao<Integer, Route> {
 			PreparedStatement pstmt = c.prepareStatement("insert into route(name, countStops, duration) values(?,?,?)");
 			pstmt.setString(1, entity.getName());
 			pstmt.setInt(2, entity.getCountStops());
-			pstmt.setString(3, entity.getDuration());
+			pstmt.setInt(3, entity.getDuration());
 			pstmt.executeUpdate();
 			entity.setId(getGeneratedId(c, "route"));
 		} catch (SQLException e) {
@@ -101,7 +101,7 @@ public class RouteDaoImpl extends AbstractDao implements IDao<Integer, Route> {
 		entity.setId(rs.getInt("id"));
 		entity.setName(rs.getString("name"));
 		entity.setCountStops(rs.getInt("countStops"));
-		entity.setDuration(rs.getString("duration"));
+		entity.setDuration(rs.getInt("duration"));
 		return entity;
 	}
 

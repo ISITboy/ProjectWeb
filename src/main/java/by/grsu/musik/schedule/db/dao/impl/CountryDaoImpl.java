@@ -29,7 +29,7 @@ public class CountryDaoImpl extends AbstractDao implements IDao<Integer, Country
 					.prepareStatement("insert into country(name, countCity, dataSave) values(?,?,?)");
 			pstmt.setString(1, entity.getName());
 			pstmt.setInt(2, entity.getCountCity());
-			pstmt.setDate(3, entity.getDataSave());
+			pstmt.setTimestamp(3, entity.getDataSave());
 			pstmt.executeUpdate();
 			entity.setId(getGeneratedId(c, "country"));
 		} catch (SQLException e) {
@@ -102,7 +102,7 @@ public class CountryDaoImpl extends AbstractDao implements IDao<Integer, Country
 		entity.setId(rs.getInt("id"));
 		entity.setName(rs.getString("name"));
 		entity.setCountCity(rs.getInt("countCity"));
-		entity.setDataSave(rs.getDate("dataSave"));
+		entity.setDataSave(rs.getTimestamp("dataSave"));
 		return entity;
 	}
 

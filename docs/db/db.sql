@@ -9,7 +9,8 @@ CREATE TABLE city (
 	id integer PRIMARY KEY AUTOINCREMENT,
 	name varchar NOT NULL,
 	countryId integer NOT NULL REFERENCES country(id),
-	countStreets integer NOT NULL
+	countStreets integer NOT NULL,
+	dataSave datetime NOT NULL
 );
 
 CREATE TABLE transport (

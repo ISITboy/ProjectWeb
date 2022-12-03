@@ -21,7 +21,7 @@ public class TransportDaoTest extends AbstractTest {
 		entity.setName("Bus");
 		entity.setCityId(saveCity("Belarus", "Brest").getId());
 		entity.setRoutId(saveRoute().getId());
-		entity.setYearRelease(getDateFromString("10/10/2022"));
+		entity.setYearRelease(getCurrentTime());
 		entity.setInspection(1);
 		entity.setNumber(7);
 		transportDao.insert(entity);
@@ -34,7 +34,7 @@ public class TransportDaoTest extends AbstractTest {
 		entity.setName("Bus");
 		entity.setCityId(saveCity("Belarus", "Brest").getId());
 		entity.setRoutId(saveRoute().getId());
-		entity.setYearRelease(getDateFromString("10/10/2022"));
+		entity.setYearRelease(getCurrentTime());
 		entity.setInspection(1);
 		entity.setNumber(7);
 		transportDao.insert(entity);
@@ -47,7 +47,7 @@ public class TransportDaoTest extends AbstractTest {
 		entity.setName("Bus");
 		entity.setCityId(saveCity("Belarus", "Brest").getId());
 		entity.setRoutId(saveRoute().getId());
-		entity.setYearRelease(getDateFromString("10/10/2022"));
+		entity.setYearRelease(getCurrentTime());
 		entity.setInspection(1);
 		entity.setNumber(7);
 		transportDao.insert(entity);
@@ -55,7 +55,7 @@ public class TransportDaoTest extends AbstractTest {
 		int newr = 0;
 		City newCity = saveCity("Grodno", "gorod");
 		entity.setCityId(newCity.getId());
-		entity.setYearRelease(getDateFromString("10/10/2022"));
+		entity.setYearRelease(getCurrentTime());
 		entity.setInspection(newr);
 		transportDao.update(entity);
 
@@ -72,7 +72,7 @@ public class TransportDaoTest extends AbstractTest {
 		entity.setName("Bus");
 		entity.setCityId(saveCity("Belarus", "Brest").getId());
 		entity.setRoutId(saveRoute().getId());
-		entity.setYearRelease(getDateFromString("10/10/2022"));
+		entity.setYearRelease(getCurrentTime());
 		entity.setInspection(1);
 		entity.setNumber(7);
 		transportDao.insert(entity);
@@ -88,7 +88,7 @@ public class TransportDaoTest extends AbstractTest {
 		entity.setName("Bus");
 		entity.setCityId(saveCity("Belarus", "Brest").getId());
 		entity.setRoutId(saveRoute().getId());
-		entity.setYearRelease(getDateFromString("10/10/2022"));
+		entity.setYearRelease(getCurrentTime());
 		entity.setInspection(1);
 		entity.setNumber(0);
 		transportDao.insert(entity);
@@ -112,7 +112,7 @@ public class TransportDaoTest extends AbstractTest {
 			entity.setName("Bus");
 			entity.setCityId(saveCity("Belarus", "Brest").getId());
 			entity.setRoutId(saveRoute().getId());
-			entity.setYearRelease(getDateFromString("10/10/2022"));
+			entity.setYearRelease(getCurrentTime());
 			entity.setInspection(1);
 			entity.setNumber(7);
 			transportDao.insert(entity);
@@ -125,7 +125,7 @@ public class TransportDaoTest extends AbstractTest {
 		Route entity = new Route();
 		entity.setName("Дубко-Автовакзал");
 		entity.setCountStops(10);
-		entity.setDuration("40min");
+		entity.setDuration(40);
 		routeDao.insert(entity);
 		return entity;
 	}
@@ -134,13 +134,14 @@ public class TransportDaoTest extends AbstractTest {
 		Country countryEntity = new Country();
 		countryEntity.setName(country);
 		countryEntity.setCountCity(100);
-		countryEntity.setDataSave(getDateFromString("10/10/2022"));
+		countryEntity.setDataSave(getCurrentTime());
 		countryDao.insert(countryEntity);
 
 		City cityEntity = new City();
 		cityEntity.setName(city);
 		cityEntity.setCountryId(countryEntity.getId());
 		cityEntity.setCountStreets(45);
+		cityEntity.setDataSave(getCurrentTime());
 		cityDao.insert(cityEntity);
 
 		return cityEntity;
